@@ -1,0 +1,24 @@
+<?php
+/**
+ * Pour se connecter à une base de données MySQL, on a besoin de :
+ * - Adresse du serveur de la base de données
+ * - L'utilisateur de la base de données
+ * - Le mot de passe de L'utilisateur de la base de données
+ * - Nom de la base de données : bdd_dujardin 
+ */
+  $servername = 'localhost';
+  $user = 'root';
+  $password = '';
+  $dbname = 'bdd_dujardin';
+
+  $pdo = new PDO("mysql:host:$servername;dbname=$dbname", $user, $password);
+?> 
+ 
+ // 1- Définition de la requete SQL à exécuter
+   $sql = "INSERT INTO users(nom, prenom, ladate) VALUES(?, ?, ?)";
+   
+   //2- Appel de la fonction prepare sur l'objet pdo
+   $stmt = $pdo->prepare($sql);
+   
+   //3- Exécution de la requette
+   $stmt->excecute([$nom,$prenom, $ladate ]);
