@@ -16,7 +16,32 @@
        $annee = 1970;
        $nom = "Jean Michel";
        $ville = "Paris";
-       echo "$nom est née en $annee et habite $ville";
+       //echo "$nom est née en $annee et habite $ville";
+       echo $nom.' est née en '.$annee.' et j\'habite '.$ville;
+
+       echo '<br><br>--------Opérations---------<br>';
+       $nbre1 = 15;
+       $nbre2 = 3;
+        // addition - soustraction - multiplication - division - modulo
+       echo "L'addition de $nbre1 + $nbre2 = ";
+       echo $nbre1 + $nbre2;
+       echo '<br><br>';
+       echo "La soustraction de $nbre1-$nbre2=";
+       echo $nbre1-$nbre2;
+       echo '<br><br>';
+       echo "La division de $nbre1/$nbre2=";
+       echo $nbre1/$nbre2;
+       echo '<br><br>';
+       echo "La multiplication de $nbre1*$nbre2=";
+       echo $nbre1*$nbre2;
+       echo '<br><br>';
+       echo "modulo de $nbre1%$nbre2=";
+       echo $nbre1%$nbre2;
+
+
+
+
+
     ?>
 </body>
 </html>
