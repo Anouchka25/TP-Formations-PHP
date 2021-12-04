@@ -1,0 +1,11 @@
+1/Rédiger une expression conditionnelle pour tester 
+si un nombre est à la fois un multiple de 3 et de 5.
+
+2/Écrire une expression conditionnelle 
+utilisant les variables $age et $sexe dans 
+une instruction if pour sélectionner une personne 
+de sexe féminin dont l’age est compris 
+entre 21 et 40 ans et afficher un message de bienvenue approprié.
+
+3/
+

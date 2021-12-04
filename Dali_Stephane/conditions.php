@@ -15,19 +15,21 @@
             <input type="submit" value="Valider">
         </fieldset>
     </form>
-
+<br><br><br>
     <?php
 
     //$age = isset($_POST['age']) ? $_POST['age'] : NULL; 
 
-    $age = 23;
+    $age = 25;
+    $ville = "Lyon";
 
-    if($age>=18){
-        echo "Vous êtes majeur pour voter";
+    if($age>=18 AND $ville == "Lyon"){
+        echo "Vous êtes majeur et dans la bonne ville pour voter";
     }
     else{ 
         echo "Oh désolé, vous êtes encore mineur pour voter";
     }
+    
     ?>
 </body>
 </html>

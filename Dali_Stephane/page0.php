@@ -7,16 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-
-<?php 
-  include('ajouter.php');
-  //include('destination.php');
-  include('recherche.php');
-?>
-<a href="index.php">Ajouter</a>
-<a href="users.php">Liste des utilisateurs</a>
+    
 </body>
 </html>
-
-
-

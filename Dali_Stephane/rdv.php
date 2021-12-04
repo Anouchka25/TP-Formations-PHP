@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,16 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-
-<?php 
-  include('ajouter.php');
-  //include('destination.php');
-  include('recherche.php');
-?>
-<a href="index.php">Ajouter</a>
-<a href="users.php">Liste des utilisateurs</a>
+    <h1>Bienvenue pour la prise de votre rendez-vous pour la vaccin</h1>
 </body>
 </html>
-
-
-
