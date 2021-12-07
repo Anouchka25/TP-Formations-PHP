@@ -15,6 +15,26 @@
         echo "Je m'appelle Alexandre <br>";
         echo "j'habite sur paris <br>"; 
         echo "la france est un pays de l'europe";
+        echo "<br><br>--------------------<br>";
+        $annee = 1970;
+        $nom = "Jean-Michel";
+        $ville = "Lyon"; 
+        $language = "PHP";
+        echo "Je m'appelle $nom et je suis née en $annee. J'habite à $ville. J'apprend le langage $language";
+
+        echo "<br>--------Opérations------------<br>";
+        $nombre1 = 15;
+        $nombre2 = 3;
+        echo "$nombre1 + $nombre2 = ";
+        echo $nombre1 + $nombre2;
+        echo "<br>";
+        echo "$nombre1 - $nombre2 = ";
+        echo $nombre1 - $nombre2; 
+        echo "<br>";
+        echo "$nombre1 * $nombre2 =";
+        echo $nombre1 * $nombre2; 
+
+
     ?>
 </body>
 </html>
