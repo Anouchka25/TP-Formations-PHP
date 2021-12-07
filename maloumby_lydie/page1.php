@@ -35,6 +35,7 @@
        
        echo "Bonjour tout le monde <br>";
 
+
        echo "Nous sommes le 25/11/2021 <br>";
 
       echo "Je m'appelle $nom $prenom j'habite à $ville <br>";
