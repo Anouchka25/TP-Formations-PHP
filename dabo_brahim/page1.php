@@ -10,6 +10,7 @@
     <h1>Mon premier programme PHP</h1>
 
     <?php 
+        //Guillemets doubles
         echo "Bonjour tout le monde <br>"; 
         
         echo "Je m'appelle Alexandre <br>";
@@ -32,8 +33,20 @@
         echo $nombre1 - $nombre2; 
         echo "<br>";
         echo "$nombre1 * $nombre2 =";
-        echo $nombre1 * $nombre2; 
+        echo $nombre1 * $nombre2;
+        
+        echo "<br>--------------------<br>";
+        
+        //Guillemets simples
+        echo 'Je m\'appelle '.$nom.' et je suis née en '.$annee;
 
+       echo 'J\'habite à '.$ville.' J\'apprend le langage '.$language;
+       
+       echo "<br>--------------------<br>";
+       $auteur = "Victor Hugo";
+       $titre = "Les Misérables";
+       //Le livre Les Misérables a été écrit par Victor Hugo
+       echo ' le livre ' les Misérables a été écrit par Victor Hugo'
 
     ?>
 </body>
