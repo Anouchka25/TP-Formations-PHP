@@ -65,6 +65,23 @@
       else{
           echo "Vous êtes un extraterrestre";
       }
+
+      echo "<br><br>";
+      switch ($dose) {
+          case 0:
+            echo "Vous devez vous faire vacciner";
+              break;
+          case 1:
+            echo "Vous devez prendre la 2eme dose";
+              break;
+          case 2:
+            echo "Vous devez prendre la 3eme dose";
+              break;
+        case 3:
+            echo "Vous devez faire un rappel de la 3eme dose";
+             break;
+          default: echo "Vous êtes un extraterrestre";
+      }
     ?>
     <a href="rdv.php">Prendre rendez-vous</a>
 </body>
