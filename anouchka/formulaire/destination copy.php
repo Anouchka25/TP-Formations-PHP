@@ -47,9 +47,33 @@ $stmt->execute([$numsecu]);
 $user = $stmt->fetchAll();
 foreach ($user as $row) {
   if($row['numsecu'] == $numsecu){
-     // echo 'Cet utilisateur existe déja !' ;
+      echo 'Cet utilisateur existe déja !' ;
   }
 }
+
+
+
+echo "<h3>Affichage de l'utilisateur ajouté :</h3>";
+echo('<table border="1">
+    <colgroup width =150 span=3></colgroup>
+	<thead> <!-- En-tête du tableau -->
+   <tr>
+       <th>Nom</th>
+       <th>Prénom</th>
+       <th>Date de naissance</th>
+       <th>Numéro de sécu</th>
+       <th>Fichier</th>
+       </thead>
+       <tbody> <!-- Corps du tableau --> ');
+       echo ('<tr>');
+       echo ('<td>'.$nom.'</td>');
+       echo ('<td>'.$prenom.'</td>');
+       echo ('<td>'.date('d/m/Y', strtotime($ladate)).'</td>');
+       echo ('<td>'.$numsecu.'</td>');
+       echo ('<td><a href="uploads/'.$file.'" target="_blank">Télécharger</a></td>');
+       echo('</tr>');
+       echo('</tbody>');
+       echo('</table>');
 
        echo('<table >');
        echo '<tr>';

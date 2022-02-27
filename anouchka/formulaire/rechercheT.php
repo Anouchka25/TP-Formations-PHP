@@ -14,6 +14,8 @@
    <th>Nom</th>
    <th>Prénom</th>
    <th>Date de naissance</th>
+   <th>Numéro sécu</th>
+   <th>Actions</th>
    </thead>
    <tbody> <!-- Corps du tableau -->
 <?php
@@ -33,6 +35,7 @@ foreach ($user as $row) {
        echo ('<td>'.$row['prenom'].'</td>');
        echo ('<td>'.$row['ladate'].'</td>');
        echo ('<td>'.$numsecu.'</td>');
+       echo ('<td><a href="modifier.php?numsecu='.$numsecu.'">Modifier</a></td>');
        echo('</tr>');
 }
 ?>

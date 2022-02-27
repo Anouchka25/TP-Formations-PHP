@@ -1,3 +1,14 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<?php include("entete.php"); ?>
 <?php
 require 'connexion.php';
 
@@ -20,7 +31,7 @@ $name = isset($_FILES['file']['name']) ? $_FILES['file']['name'] : NULL;
     $tabExtension = explode('.', $name);
     $extension = strtolower(end($tabExtension));
     //Tableau des extensions que l'on accepte
-    $extensions = ['pdf', 'jpg', 'png', 'jpeg', 'gif'];
+    $extensions = ['jpg', 'png', 'jpeg'];
     //Taille max que l'on accepte
     $maxSize = 400000;
     if(in_array($extension, $extensions) && $size <= $maxSize && $error == 0){
@@ -88,3 +99,6 @@ foreach ($user as $row) {
        $headers = "De :" . $from;
        mail($to,$subject,$message, $headers);
        //echo "L'email a été envoyé.";
+?>
+</body>
+</html>

@@ -1,4 +1,4 @@
-<h1>  Formulaire d'inscription</h1>
+<h1>  Formulaire d'inscription à l'annuaire</h1>
 <fieldset id="main">
 <legend>Notre formulaire :</legend>
 <form action="destination.php" method="post" enctype="multipart/form-data">

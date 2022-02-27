@@ -1,3 +1,14 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<?php include("entete.php"); ?>
 <?php
 require 'connexion.php';
 
@@ -9,31 +20,40 @@ $prenom = isset($_POST['prenom']) ? $_POST['prenom'] : NULL;
 $ladate = isset($_POST['ladate']) ? $_POST['ladate'] : NULL;
 $numsecu = isset($_POST['numsecu']) ? $_POST['numsecu'] : NULL;
 $name = isset($_FILES['file']['name']) ? $_FILES['file']['name'] : NULL;
+$name2 = isset($_FILES['file2']['name']) ? $_FILES['file2']['name'] : NULL;
 
-
-//if(isset($_FILES['file'])){
+    //if(isset($_FILES['file'])){
     $tmpName = $_FILES['file']['tmp_name'];
+    $tmpName2 = $_FILES['file2']['tmp_name'];
     //$name = $_FILES['file']['name'];
     $size = $_FILES['file']['size'];
+    $size2 = $_FILES['file2']['size'];
     $error = $_FILES['file']['error'];
+    $error2 = $_FILES['file2']['error'];
 
     $tabExtension = explode('.', $name);
+    $tabExtension2 = explode('.', $name2);
     $extension = strtolower(end($tabExtension));
+    $extension2 = strtolower(end($tabExtension2));
     //Tableau des extensions que l'on accepte
-    $extensions = ['pdf', 'jpg', 'png', 'jpeg', 'gif'];
+    $extensions = ['jpg', 'png', 'jpeg'];
+    $extensions2 = ['pdf','jpg', 'png', 'jpeg'];
     //Taille max que l'on accepte
     $maxSize = 400000;
-    if(in_array($extension, $extensions) && $size <= $maxSize && $error == 0){
+    if(in_array($extension, $extensions) && in_array($extension2, $extensions2) ){
         
         $uniqueName = uniqid('', true);
+        $uniqueName2 = uniqid('', true);
         //uniqid génère quelque chose comme ca : 5f586bf96dcd38.73540086
         $file = $uniqueName.".".$extension;
+        $file2 = $uniqueName2.".".$extension2;
         //$file = 5f586bf96dcd38.73540086.jpg
         move_uploaded_file($tmpName, 'uploads/'.$file);
+        move_uploaded_file($tmpName2, 'uploads2/'.$file2);
 
-        $sql = "INSERT INTO users (nom, prenom, ladate, numsecu, monfichier) VALUES (?,?,?,?,?)";
+        $sql = "INSERT INTO users (nom, prenom, ladate, numsecu, monfichier, monfichier2) VALUES (?,?,?,?,?,?)";
         $stmt= $pdo->prepare($sql);
-        $stmt->execute([$nom, $prenom, $ladate, $numsecu, $file]);
+        $stmt->execute([$nom, $prenom, $ladate, $numsecu, $file, $file2]);
     }
     else{
         echo "Mauvaise extension";
@@ -66,8 +86,10 @@ foreach ($user as $row) {
        echo '<tr>';
        echo '<td>Numéro de sécu</td>';
        echo ('<td>'.$numsecu.'</td>');
+       echo ('<td><a href="uploads2/'.$file2.'" target="_blank">Voir le CV</a></td>');
        echo '</tr>';
        echo('</table>');
+       
 
 
        
@@ -88,3 +110,6 @@ foreach ($user as $row) {
        $headers = "De :" . $from;
        mail($to,$subject,$message, $headers);
        //echo "L'email a été envoyé.";
+?>
+</body>
+</html>

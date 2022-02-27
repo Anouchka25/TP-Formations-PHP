@@ -1,13 +1,22 @@
+<?php
+// on la démarre :)
+session_start ();
+// On récupère nos variables de session
+if (isset($_SESSION['numsecu']) && isset($_SESSION['password'])) {
+   ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Document</title>
+   <title>Liste des membres</title>
+   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<h1>Liste des utilisateurs</h1>
+<?php include("entete.php"); ?>
+<h1>Liste des membres </h1>
 
 <?php
 require 'connexion.php'; 
@@ -17,29 +26,38 @@ echo('<table border="1">
 <colgroup width =150 span=3></colgroup>
 <thead> <!-- En-tête du tableau -->
 <tr>
+   <th>Photo</th>
    <th>Nom</th>
    <th>Prénom</th>
    <th>Date de naissance</th>
    <th>Numéro sécu</th>
-   <th>Fichier</th>
    </thead>
    <tbody> <!-- Corps du tableau --> ');
    foreach ($data as $row) {
    echo ('<tr>');
+   echo '<td><img src="uploads/'.$row['monfichier'].'" width=150px ></td>';
    echo ('<td>'.$row['nom'].'</td>');
    echo ('<td>'.$row['prenom'].'</td>');
-   echo ('<td>'.$row['ladate'].'</td>');
+   echo ('<td>'.date('d/m/Y', strtotime($row['ladate'])).'</td>');
    echo ('<td>'.$row['numsecu'].'</td>');
-   echo ('<td><a href="uploads/'.$row['monfichier'].'" target="_blank">Télécharger</a></td>');
    echo('</tr>');
     }
    echo('<tbody>');
    echo('</table>');
 
+   
+
 ?>
-<a href="index.php">Ajouter</a>
-<a href="users.php">Liste des utilisateurs</a>
 
    
 </body>
 </html>
+
+<?php
+}
+else {
+   header ('location: login.php');
+}
+
+
+?>
