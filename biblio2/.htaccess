@@ -1,0 +1,12 @@
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^(.*)$ index.php?page=$1
+
+# ^   Reconnaît le debut de la ligne
+# ()  Groupement
+# $   Reconnaît la fin de la ligne (ou juste avant le caractère nouvelle ligne final)
+# . Reconnaît n'importe quel caractère (sauf le caractère nouvelle ligne)
+# *      Reconnaît 0 fois ou plus
